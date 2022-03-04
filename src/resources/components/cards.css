@@ -1,0 +1,173 @@
+.cardShowCase {
+    display: flex;
+    width: 99vw;
+}
+
+/* Design Library Content */
+:root {
+    --cardWidth: 15vw;
+    --cardRadius: 20px;
+    --cardRadiusSecondary: 50px;
+    --cardColorPrimary: white;
+    --cardShadowColor: rgba(0, 0, 0, 0.637);
+    --cardBorderColor: black;
+    --cardShadowBlurRadius: 15px;
+    --cardShadowBlurRadiusSecondary: 40px;
+    --cardGradientColor1: #6df8c8;
+    --cardGradientColor2: #4debdb;
+    --cardBackgroundPrimaryColor: aquamarine;
+}
+
+
+/* Basic Cards */
+.card {
+    background-color: var(--cardColorPrimary);
+    padding: 40px 25px;
+    width: var(--cardWidth);
+    text-align: center;
+    margin: 10px 10px;
+    border: 1px double var(--cardBorderColor);
+}
+
+
+/* Different Borders*/
+.cardBorderDotted {
+    border: 1px dotted var(--cardBorderColor);
+}
+.cardBorderDashed {
+    border: 1px dashed var(--cardBorderColor);
+}
+
+
+/* Rounded Cards */
+.cardRounded {
+    border-radius: var(--cardRadius);
+}
+.cardRoundedTopLeft {
+    border-top-left-radius: var(--cardRadiusSecondary);
+}
+.cardRoundedTopRight {
+    border-top-right-radius: var(--cardRadius);
+}
+.cardRoundedBottomLeft {
+    border-bottom-left-radius: var(--cardRadius);
+}
+.cardRoundedBottomRight {
+    border-bottom-right-radius: var(--cardRadius);
+}
+
+
+/* Card Stable Effects */
+.cardShadowed {
+    box-shadow: 0px 0px var(--cardShadowBlurRadius) 1px var(--cardShadowColor);
+}
+.cardGradientBG {
+    background: radial-gradient(var(--cardGradientColor1), var(--cardGradientColor2));
+}
+.cardColoredBG {
+    background-color: var(--cardBackgroundPrimaryColor);
+}
+
+
+/* Card Hover Effects */
+.cardHoverShadow:hover {
+    box-shadow: 0px 0px var(--cardShadowBlurRadiusSecondary) 1px var(--cardShadowColor);
+}
+.cardHoverBackground:hover {
+    animation: changeBackground 0.8s forwards;
+}
+.cardHoverImageRotateVertical:hover img {
+    animation: rotateVertical 1s forwards;
+}
+.cardHoverImageRotateHorizontal:hover img {
+    animation: rotateHorizontal 1s forwards;
+}
+.cardHoverFadeIn:hover {
+    animation: fade 2s forwards;
+}
+.cardHoverFadeOut:hover {
+    animation: fade 2s reverse forwards;
+}
+.cardHoverRoundCorners:hover {
+    animation: roundCorners 0.5s forwards;
+}
+.cardHoverScaleDown:hover {
+    animation: scaleDownCard 1s forwards;
+}
+.cardHoverScaleUp:hover {
+    animation: scaleUpCard 1s forwards;
+}
+
+
+/* Animations */
+@keyframes rotateVertical {
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes rotateHorizontal {
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes fade {
+    0%   {
+        opacity: 0.0;
+    }
+    10% {
+        opacity: 0.1;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    30% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    90%  {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes changeBackground {
+    to {
+        background-color: var(--cardBackgroundPrimaryColor);
+    }
+}
+
+@keyframes roundCorners {
+    to {
+        border-radius: var(--cardRadiusSecondary);
+    }
+}
+
+@keyframes scaleDownCard {
+    to {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes scaleUpCard {
+    to {
+        transform: scale(1.1);
+    }
+}

@@ -1,0 +1,225 @@
+:root {
+  --blue_100: #f0f8ff;
+  --inputPlaceholder: #797979;
+  /* Primary input colors */
+  --inputPrimaryBg: #f0f0f0;
+  --inputPrimaryOutline: #c9c9c9;
+  --inputPrimaryHover: #e9e9e9;
+  /* Rounded Primary input colors */
+  --inputPrimaryRoundedBg: #f0f0f0;
+  --inputPrimaryRoundedOutline: #c9c9c9;
+  --inputPrimaryRoundedHover: #e9e9e9;
+  /* Underlined Input colors */
+  --inputUnderlineBorder: #f00;
+  --inputUnderlineHover: #e6e6e6;
+  /* Animated input colors */
+  --inputAnimatedUnderline: #f00;
+  /* Outline input colors */
+  --inputOutlineBorder: #b8b8b8;
+  --inputOutlineBg: #fff;
+  --inputOutlineFocus: blue;
+  /* Rounded outline input colors */
+  --inputOutlineRoundedBorder: #b8b8b8;
+  --inputOutlineRoundedBg: #fff;
+  --inputOutlineRoundedFocus: blue;
+  /* Input Shadow */
+  --inputShadowHover: #f1f1f1;
+  --inputShadowBorder: #000;
+  --inputShadowClr: #a7a7a7;
+  /* Rounded input colors */
+  --inputShadowRoundedHover: #f1f1f1;
+  --inputShadowRoundedBg: #eeeeee;
+  --inputShadowRoundedBorder: #000;
+  --inputShadowRoundedClr: #a7a7a7;
+}
+/* Basic styles for the display page */
+
+html {
+  height: 100vh;
+  box-sizing: border-box;
+}
+* {
+  box-sizing: inherit;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background-color: var(--blue_100);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+input {
+  width: 300px;
+}
+/* Primary Input*/
+.inputPrimary {
+  border: none;
+  background-color: var(--inputPrimaryBg);
+  padding: 0.5rem;
+  transition: 150ms linear;
+  outline: 2px solid transparent;
+  border-radius: 0.25rem;
+}
+.inputPrimary:hover {
+  background-color: var(--inputPrimaryHover);
+}
+
+.inputPrimary:active,
+.inputPrimary:focus {
+  outline: 2px solid var(--inputPrimaryOutline);
+  background-color: var(--inputPrimaryHover);
+}
+.inputPrimary::placeholder {
+  color: var(--inputPlaceholder);
+  font-weight: 500;
+}
+.inputPrimaryRounded {
+  border: none;
+  background-color: var(--inputPrimaryRoundedBg);
+  padding: 0.5rem 0.75rem;
+  transition: 150ms linear;
+  outline: 2px solid transparent;
+  border-radius: 2.5rem;
+}
+.inputPrimaryRounded:hover {
+  background-color: var(--inputPrimaryRoundedHover);
+}
+
+.inputPrimaryRounded:active,
+.inputPrimaryRounded:focus {
+  outline: 2px solid var(--inputPrimaryRoundedOutline);
+  background-color: var(--inputPrimaryRoundedHover);
+}
+.inputPrimaryRounded::placeholder {
+  color: var(--inputPlaceholder);
+  font-weight: 500;
+}
+/* Secondary Input */
+.inputUnderline {
+  outline: none;
+  padding: 0.5rem;
+  background-color: transparent;
+  border-radius: 0.125rem;
+  border: none;
+  border-bottom: 2px solid black;
+  transition: all 250ms ease-in-out;
+}
+.inputUnderline:hover {
+  background-color: var(--inputUnderlineHover);
+}
+.inputUnderline:focus {
+  background-color: var(--inputUnderlineHover);
+  border-bottom: 2px solid var(--inputUnderlineBorder);
+}
+.inputUnderline:focus::placeholder {
+  color: var(--inputPlaceholder);
+}
+
+/* Animated Input*/
+.inputAnimatedContainer {
+  position: relative;
+}
+.inputAnimated {
+  position: relative;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  z-index: 1;
+  background-color: transparent;
+}
+.inputAnimated::placeholder {
+  opacity: 0;
+}
+.inputAnimatedLabel {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-inline: 0.5rem;
+  z-index: 10;
+  transition: 200ms ease-in-out;
+  pointer-events: none;
+}
+.inputAnimatedUnderline {
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  /* Change the Left value below to determine the underline direction */
+  left: 50%;
+  background-color: var(--inputAnimatedUnderline);
+  transition: all 200ms ease-in-out;
+  z-index: 100;
+}
+.inputAnimated:focus ~ .inputAnimatedLabel {
+  transform: translateY(-2rem);
+  font-size: 0.75rem;
+  color: var(--inputPlaceholder);
+}
+.inputAnimated:focus ~ .inputAnimatedUnderline {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.inputOutline {
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 0.125rem;
+  background-color: var(--inputOutlineBg);
+  border: 1px solid var(--inputOutlineBorder);
+  transition: 500ms ease;
+}
+.inputOutline:active,
+.inputOutline:focus {
+  border-color: var(--inputOutlineFocus);
+}
+.inputOutlineRounded {
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2rem;
+  background-color: var(--inputOutlineRoundedBg);
+  border: 1px solid var(--inputOutlineRoundedBorder);
+  transition: 500ms ease;
+}
+.inputOutlineRounded:active,
+.inputOutlineRounded:focus {
+  border-color: var(--inputOutlineRoundedFocus);
+}
+
+.inputShadow {
+  padding: 0.5rem;
+  outline: none;
+  transition: 200ms ease-in-out;
+  border: 1px solid var(--inputShadowBorder);
+  border-radius: 0.125rem;
+}
+.inputShadow:active,
+.inputShadow:focus {
+  transform: scale(1.01);
+  background-color: var(--inputShadowHover);
+  box-shadow: 0 0 0.5rem 0 var(--inputShadowClr);
+}
+
+/* Rounded Input*/
+.inputShadowRounded {
+  border: 1px solid var(--inputShadowRoundedBorder);
+  padding: 0.5rem;
+  outline: none;
+  transition: 150ms linear;
+  border-radius: 1rem;
+  padding-inline: 1rem;
+}
+.inputShadowRounded:active,
+.inputShadowRounded:focus {
+  transform: scale(1.01);
+  box-shadow: 0 0 0.5rem 0 var(--inputShadowRoundedClr);
+  background-color: var(--inputShadowRoundedHover);
+}

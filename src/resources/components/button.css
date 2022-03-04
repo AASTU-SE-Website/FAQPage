@@ -1,0 +1,96 @@
+:root {
+    --primary: rgb(47, 187, 206);
+    --secondary: rgb(70, 179, 70);
+    --alert: rgb(235, 173, 4);
+    --danger: rgb(224, 39, 76);
+}
+
+/* For implementation purposes only */
+
+table {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid;
+}
+
+td {
+    padding: 30px;
+}
+
+.table {
+    justify-content: center;
+}
+
+/* For implementation purposes only */
+
+.btn {
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.35rem 0.8rem;
+}
+
+.btnPrimary {
+    background-color: var(--primary);
+    border-color: #007bff;
+}
+
+.btnSecondary {
+    background-color: var(--secondary);
+}
+
+.btnAlert {
+    background-color: var(--alert);
+}
+
+.btnDanger {
+    background-color: var(--danger);
+}
+
+.btnHoverExpand:hover {
+    padding: 0.675rem 1.15rem;
+    transition-duration: 250ms;
+}
+
+.btnHoverGlow:hover {
+    animation: glowingButton 500ms infinite;
+}
+
+.btnBig {
+    padding: 0.4rem 0.95rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.btnSmall {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.btnBlock {
+    display: block;
+    width: 100%;
+}
+
+@keyframes glowingButton {
+    0% {
+
+        box-shadow: 0 0 5px;
+    }
+    50% {
+        box-shadow: 0 0 15px;
+    }
+    100% {
+        box-shadow: 0 0 5px;
+    }
+}

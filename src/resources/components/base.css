@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.font {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.fontHeader {
+    font-size: 36px;
+}
+
+.fontSubHeader {
+    font-size: 24px;
+}
+
+.fontText {
+    font-size: 12px;
+}
