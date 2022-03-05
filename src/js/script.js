@@ -94,7 +94,6 @@ faqArray.forEach((question) => {
           </div>
     `
     faqContainer.innerHTML += content;
-    console.log(question)
 })
 
 
