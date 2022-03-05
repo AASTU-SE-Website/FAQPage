@@ -1,2 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Encode+Sans+Expanded&family=Open+Sans&family=Poppins&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Encode+Sans+Expanded&family=Open+Sans&family=Poppins&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
+/* Color Variables */
 
+:root {
+  --white: #fff;
+  --black: #111111;
+  --grey: #f1f1f1;
+  --theme-blue: #2f8ded;
+  --theme-blue-lighter: #59acff;
+  --theme-blue-lightest: #59acff3d;
+
+  /* sizing variables */
+  --navbar-logo-width: 30%;
+}
+
+/*  */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* BROOKS SECTION START */
+
+a {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+.containerBrook {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+#faqHeader {
+  font-size: 2rem;
+  margin: 30px 0px 50px;
+}
+
+.faqContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 30px;
+}
+
+.questionsContainer {
+  width: 100%;
+  border: #4c8ff59c solid 2px;
+  padding: 30px;
+  transition: background-color 1s ease-in-out;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.question > h3 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.dropdownSvg {
+  width: 30px;
+  height: auto;
+  transition: display 1s ease-in-out;
+}
+
+.cancelSvg {
+  display: none;
+}
+.questionsContainer.active {
+  background-color: var(--theme-blue-lightest);
+}
+.questionsContainer.active .dropdownSvg {
+  opacity: 0;
+  /* display: none; */
+}
+
+.questionsContainer.active .cancelSvg {
+  display: block;
+  width: 30px;
+  height: auto;
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+.faqAnswer > p {
+  font-size: large;
+  line-height: 1.5;
+}
+.questionsContainer.active .faqAnswer {
+  max-height: 900px;
+  animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  #faqHeader {
+    font-size: 1.5rem;
+  }
+  .question > h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logoImage {
+    width: 15%;
+  }
+  .faqNavbarLinksContainer {
+    width: 73%;
+    gap: 3%;
+  }
+  .logoImage {
+    width: 20%;
+  }
+}
