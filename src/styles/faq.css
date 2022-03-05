@@ -90,10 +90,10 @@ a {
 .questionsContainer.active {
   background-color: var(--theme-blue-lightest);
 }
-/* .questionsContainer.active .dropdownSvg {
+.questionsContainer.active .dropdownSvg {
   opacity: 0;
   display: none;
-} */
+}
 .questionsContainer.active .cancelSvg {
   display: block;
   width: 30px;
