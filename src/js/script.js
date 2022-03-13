@@ -106,7 +106,6 @@ faqs.forEach((faq) => {
     });
 });
 
-
 // Selecting and Styling all input fields
 const inputs = document.querySelectorAll('.input');
 
@@ -129,5 +128,11 @@ inputs.forEach((input) => {
             parent.classList.remove('focus')
         } 
     })
-});
 
+    input.addEventListener('invalid', () => {
+      if(input.value === '') {
+        input.setCustomValidity('this input field is required');
+        input.parentElement.className += ' error'
+      }
+    });
+});
