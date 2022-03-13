@@ -1,4 +1,4 @@
-// BROOKS SECTION START 
+// Temporary array of Questions and answers for the FAQ section that will be loaded
 
 const faqArray = [
     {
